@@ -1,0 +1,35 @@
+<h1>Listing pxes</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User name</th>
+    <th>Image url</th>
+    <th>Description</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Gmaps</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pxes.each do |px| %>
+  <tr>
+    <td><%= px.title %></td>
+    <td><%= px.user_name %></td>
+    <td><%= px.image_url %></td>
+    <td><%= px.description %></td>
+    <td><%= px.latitude %></td>
+    <td><%= px.longitude %></td>
+    <td><%= px.gmaps %></td>
+    <td><%= link_to 'Show', px %></td>
+    <td><%= link_to 'Edit', edit_px_path(px) %></td>
+    <td><%= link_to 'Destroy', px, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Px', new_px_path %>

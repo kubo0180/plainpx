@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @px.title %>
+</p>
+
+<p>
+  <b>User name:</b>
+  <%= @px.user_name %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @px.image_url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @px.description %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @px.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @px.longitude %>
+</p>
+
+<p>
+  <b>Gmaps:</b>
+  <%= @px.gmaps %>
+</p>
+
+
+<%= link_to 'Edit', edit_px_path(@px) %> |
+<%= link_to 'Back', pxes_path %>
