@@ -12,7 +12,7 @@
 
 <p>
   <b>Image url:</b>
-  <%= @px.image_url %>
+  <%= image_tag @px.image_url %>
 </p>
 
 <p>
@@ -35,6 +35,7 @@
   <%= @px.gmaps %>
 </p>
 
-
+<%= render 'comments/index' %>
+<%= render 'comments/form' %>
 <%= link_to 'Edit', edit_px_path(@px) %> |
 <%= link_to 'Back', pxes_path %>

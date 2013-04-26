@@ -2,7 +2,7 @@ class PxesController < ApplicationController
   # GET /pxes
   # GET /pxes.json
   def index
-    @pxes = Px.all
+    @pxes = Px.all(:order => "updated_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +14,7 @@ class PxesController < ApplicationController
   # GET /pxes/1.json
   def show
     @px = Px.find(params[:id])
+    @comment = @px.comments.build
 
     respond_to do |format|
       format.html # show.html.erb

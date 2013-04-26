@@ -1,0 +1,16 @@
+<h2>comments</h2>
+<ul>
+<% if @px.comments.size < 2 %>
+  <li>No comments.</li>
+<% else %>
+  <% @px.comments.each do |comment| %>
+    <% unless comment.id.nil? %>
+    <li><%= comment.body %>( by <%= comment.commenter %> | <%=comment.created_at %>)
+      <%= link_to 'Edit',  edit_px_comment_path(@px,  comment) %> |
+      <%= link_to 'Destroy', px_comment_path(@px, comment), confirm: 'Are you sure?', method: :delete %>
+    </li>
+    <% end %>
+  <% end %>
+<% end %>
+</ul>
+

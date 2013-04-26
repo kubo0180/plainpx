@@ -1,0 +1,28 @@
+<h1>Listing comments</h1>
+
+<table>
+  <tr>
+    <th>Px</th>
+    <th>Body</th>
+    <th>Commenter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.px %></td>
+    <td><%= comment.body %></td>
+    <td><%= comment.commenter %></td>
+    <td><%= link_to 'Show', px_comment_path(@px, comment) %></td>
+    <td><%= link_to 'Edit', edit_px_comment_path(@px, comment) %></td>
+    <td><%= link_to 'Destroy', px_comment_path(@px, comment), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back', px_path(@px) %> |
+<%= link_to 'New Comment', new_px_comment_path %>

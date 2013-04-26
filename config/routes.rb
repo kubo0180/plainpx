@@ -1,5 +1,9 @@
 Plainpx::Application.routes.draw do
-  resources :pxes
+
+  resources :pxes do
+    resources :comments
+  end
+
   root :to => 'pxes#index'
 
 
