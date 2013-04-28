@@ -1,6 +1,6 @@
 <% @pxes.each do |px| %>
   <div class="span3 box">
-    <%= image_tag px.image_url %>
+    <%= image_tag px.image.url(:square) %>
     <h4><%= px.title %></h4>
     <%= link_to 'Show', px, :class => 'btn btn-primary btn-large btn-block' %>
   </div>
