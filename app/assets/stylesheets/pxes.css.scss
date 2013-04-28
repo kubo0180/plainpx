@@ -1,3 +1,13 @@
 // Place all the styles related to the Pxes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.pxes {
+  .box { 
+    height: 320px;
+    margin-left: 10px !important;
+    margin-right: 5px;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #ECF0F1;
+  }  
+}

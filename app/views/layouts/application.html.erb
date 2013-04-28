@@ -9,7 +9,7 @@
 <body class='<%= controller.controller_name %>' >
 <div class="container">
   <div class="row">
-    <div class="span11">
+    <div class="span10">
       <div class="navbar navbar-inverse">
         <div class="navbar-inner">
           <div class="container">
@@ -21,7 +21,7 @@
                 <li>
                   <a href="#" class="menu">Menu<span class="navbar-unread">1</span></a>
                   <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href='<%= pxes_path %>'>Home</a></li>
                     <li><a href="#">Search</a></li>
                     <li><a href="#">Settings</a></li>
                   </ul> <!-- /Sub menu -->
@@ -34,7 +34,7 @@
     </div>
   </div><!-- row -->
   <div class="row">
-    <div class="span11">
+    <div class="span10">
       <%= yield %>
     </div>
   </div>

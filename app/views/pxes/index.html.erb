@@ -1,36 +1,8 @@
-<h1>Listing pxes</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>User name</th>
-    <th>Image url</th>
-    <th>Description</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>Gmaps</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @pxes.each do |px| %>
-  <tr>
-    <td><%= px.title %></td>
-    <td><%= px.user_name %></td>
-    <td><%= image_tag px.image_url %></td>
-    <td><%= image_tag px.image.url(:thumb) %></td>
-    <td><%= px.description %></td>
-    <td><%= px.latitude %></td>
-    <td><%= px.longitude %></td>
-    <td><%= px.gmaps %></td>
-    <td><%= link_to 'Show', px %></td>
-    <td><%= link_to 'Edit', edit_px_path(px) %></td>
-    <td><%= link_to 'Destroy', px, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="span3 box">
+    <%= image_tag px.image_url %>
+    <h4><%= px.title %></h4>
+    <%= link_to 'Show', px, :class => 'btn btn-primary btn-large btn-block' %>
+  </div>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Px', new_px_path %>

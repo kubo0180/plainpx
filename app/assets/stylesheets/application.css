@@ -19,10 +19,14 @@ body {
 
 .logo {
   margin-left: 10px;
-  color: #ECF0F1;
+  color: white;
 }
 
-.menu {
+.right-nav {
+  float: right !important;
+}
+
+a.menu {
   font-size: large;
 }
 
