@@ -32,7 +32,12 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
 </div>
 
 <div class="row" style="margin-top:1em;">
-  <h2>Location</h2>
+  <div class="span11">
+    <h2>Location</h2>
+  </div>
+</div>
+
+<div class="row" style="margin-top:1em;">
   <div class="span5">
     <div id="gmap_canvas" class="span5" style="height:240px"></div> <!-- you have to specify width or height on css layer to display gmaps! -->
   </div>
@@ -42,7 +47,7 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
 </div>
 
 <div class="row" style="margin-top:1em;">
-  <div class="span5">
+  <div class="span11">
     <%= render 'comments/index' %>
 
     <%= render 'comments/form' %>
