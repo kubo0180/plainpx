@@ -3,50 +3,52 @@
 google.maps.event.addDomListener(window, "load", GmapInitialize);
 </script>
 
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="span11">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @px.title %>
-</p>
+    <p style="text-align:center;">
+      <%= image_tag @px.image.url(:medium), :alt => '', :title => 'Image from S3' %>
+      <%= image_tag @px.image_url, :alt => '', :title => 'Image url' %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <b>User name:</b>
-  <%= @px.user_name %>
-</p>
+<div class="row" style="margin-top:1em;">
+  <div class="span6">
+    <p>
+      <b>Title:</b>
+      <%= @px.title %>
+    </p>
+    <p>
+      <b>User name:</b>
+      <%= @px.user_name %>
+    </p>
+    <p>
+      <b>Description:</b>
+      <%= @px.description %>
+    </p>
+    <p>
+      <b>Location:</b>
+      <% if @px.latitude and @px.longitude %>
+      <span id="latitude"><%= @px.latitude %></span>, 
+      <span id="longitude"><%= @px.longitude %></span>
+      <% else %>
+      None
+      <% end %>
+    </p>
+    <%= render 'comments/index' %>
 
-<p>
-  <b>Image from S3:</b>
-  <%= image_tag @px.image.url(:medium) %>
-</p>
+    <%= render 'comments/form' %>
 
-<p>
-  <b>Image url:</b>
-  <%= image_tag @px.image_url %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @px.description %>
-</p>
-
-<p>
-  <b>Latitude:</b>
-  <span id="latitude"><%= @px.latitude %></span>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <span id="longitude"><%= @px.longitude %></span>
-</p>
-
-<p>
-  <b>Gmaps:</b>
-  <%= @px.gmaps %>
-</p>
-<div id="gmap_canvas" style="width:480px; height:300px"></div> <!-- specifying width or height on css layer is required! -->
-
-<%= render 'comments/index' %>
-<%= render 'comments/form' %>
-<%= link_to 'Edit', edit_px_path(@px) %> |
-<%= link_to 'Back', pxes_path %>
+    <p>
+      <%= link_to 'Edit', edit_px_path(@px) %> |
+      <%= link_to 'Back', pxes_path %>
+    </p>
+  </div>
+  <div class="span5">
+  <% if @px.latitude and @px.longitude and @px.gmaps %>
+    <div id="gmap_canvas" style="width:360px;height:240px;"></div> <!-- you have to specify width or height on css layer to display gmaps! -->
+  <% end %>
+  </div>
+</div>
