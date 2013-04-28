@@ -8,9 +8,7 @@ class Px < ActiveRecord::Base
             message: 'is not image file. Please set the image file.'
   }
 
-  has_attached_file :image, styles: {
-    thumb: '100x100>', 
-    square: '220x220#', 
-    medium: '400x400>'
-  }
+  has_attached_file :image, 
+    styles: { square: '220x220#', medium: '480x480>'},
+    :default_url => "/images/:style/missing.png"
 end
