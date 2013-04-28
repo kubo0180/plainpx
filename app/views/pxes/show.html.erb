@@ -1,3 +1,8 @@
+<%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&region=JP' %>
+<script type="text/javascript">
+google.maps.event.addDomListener(window, "load", GmapInitialize);
+</script>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -27,18 +32,20 @@
 
 <p>
   <b>Latitude:</b>
-  <%= @px.latitude %>
+  <span id="latitude"><%= @px.latitude %></span>
 </p>
 
 <p>
   <b>Longitude:</b>
-  <%= @px.longitude %>
+  <span id="longitude"><%= @px.longitude %></span>
 </p>
 
 <p>
   <b>Gmaps:</b>
   <%= @px.gmaps %>
+  <img src="http://maps.googleapis.com/maps/api/staticmap?markers=<%= @px.latitude %>,<%= @px.longitude %>&zoom=13&size=600x300&sensor=false">
 </p>
+<div id="gmap_canvas"></div>
 
 <%= render 'comments/index' %>
 <%= render 'comments/form' %>
