@@ -4,7 +4,7 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
 </script>
 
 <div class="row">
-  <div class="span6">
+  <div class="span7">
     <p id="notice"><%= notice %></p>
 
     <p style="text-align:center;">
@@ -12,12 +12,11 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
     </p>
   </div>
   
-  <div class="span4 info">
-    <h2>Information</h2>
+  <div class="span3 info">
+    <h2><%= @px.title %></h2>
+    <p>(<%= @px.user_name %> uploaded)</p>
     <p>
-      <b><%= @px.title %></b><span>( by <%= @px.user_name %></span>
-    </p>
-    <p>
+      <b>description:</b>
       <%= @px.description %>
     </p>
     <p>
@@ -33,6 +32,7 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
 </div>
 
 <div class="row" style="margin-top:1em;">
+  <h2>Location</h2>
   <div class="span5">
     <div id="gmap_canvas" class="span5" style="height:240px"></div> <!-- you have to specify width or height on css layer to display gmaps! -->
   </div>
