@@ -45,17 +45,23 @@ a.menu {
 .pxes {
   .box { 
     height: 320px;
-    margin-left: 40px !important;
-    margin-right: 10px;
+    margin-left: 30px !important;
+    margin-right: 15px;
     margin-top: 25px;
     padding: 10px;
     background-color: #ECF0F1;
   }  
 }
 
-.descrition {
-  width: 300px;
+.description {
+  width: 350px;
   height: 150px;
+}
+
+.info {
+  padding: 15px;
+  background-color: #1ABC9C;
+  color: #ECF0F1;
 }
 
 #gmap_canvas img,

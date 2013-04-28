@@ -4,11 +4,30 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
 </script>
 
 <div class="row">
-  <div class="span11">
+  <div class="span6">
     <p id="notice"><%= notice %></p>
 
     <p style="text-align:center;">
       <%= image_tag @px.image.url(:medium), :alt => '', :title => 'Image from S3' %>
+    </p>
+  </div>
+  
+  <div class="span4 info">
+    <h2>Information</h2>
+    <p>
+      <b><%= @px.title %></b><span>( by <%= @px.user_name %></span>
+    </p>
+    <p>
+      <%= @px.description %>
+    </p>
+    <p>
+      <b>Location:</b>
+      <% if @px.latitude and @px.longitude %>
+      <span id="latitude"><%= @px.latitude %></span>, 
+      <span id="longitude"><%= @px.longitude %></span>
+      <% else %>
+      None
+      <% end %>
     </p>
   </div>
 </div>
@@ -23,30 +42,6 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
 </div>
 
 <div class="row" style="margin-top:1em;">
-  <div class="span6">
-    <h2>about</h2>
-    <p>
-      <b>Title:</b>
-      <%= @px.title %>
-    </p>
-    <p>
-      <b>User name:</b>
-      <%= @px.user_name %>
-    </p>
-    <p>
-      <b>Description:</b>
-      <%= @px.description %>
-    </p>
-    <p>
-      <b>Location:</b>
-      <% if @px.latitude and @px.longitude %>
-      <span id="latitude"><%= @px.latitude %></span>, 
-      <span id="longitude"><%= @px.longitude %></span>
-      <% else %>
-      None
-      <% end %>
-    </p>
-  </div>
   <div class="span5">
     <%= render 'comments/index' %>
 
