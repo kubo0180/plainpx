@@ -10,4 +10,15 @@
  *
  *= require_self
  *= require_tree .
+ *= require flat-ui
  */
+
+.logo {
+  margin-left: 10px;
+  color: #ECF0F1;
+}
+
+.menu {
+  font-size: large;
+}
+

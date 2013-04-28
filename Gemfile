@@ -44,3 +44,6 @@ gem 'jquery-rails'
 
 gem 'paperclip'
 gem 'aws-sdk'
+
+# To use Flat UI
+gem 'flatui-rails'
