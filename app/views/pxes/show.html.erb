@@ -48,7 +48,7 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
   </div>
   <div class="span5">
   <% if @px.latitude and @px.longitude and @px.gmaps %>
-    <div id="gmap_canvas" style="width:360px;height:240px;"></div> <!-- you have to specify width or height on css layer to display gmaps! -->
+    <div id="gmap_canvas" class="span5" style="height:240px"></div> <!-- you have to specify width or height on css layer to display gmaps! -->
   <% end %>
   </div>
 </div>
