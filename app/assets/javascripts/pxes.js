@@ -8,10 +8,16 @@ function $(eid) {
 
 function GmapInitialize() {
   var lat = parseFloat($("latitude").textContent), lng = parseFloat($("longitude").textContent);
+  var latlng = new google.maps.LatLng(lat, lng);
   var mapOptions = {
-    center: new google.maps.LatLng(lat, lng),
-    zoom: 8,
+    center: latlng,
+    zoom: 13,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   var map = new google.maps.Map($("gmap_canvas"), mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: latlng,
+    map: map
+  });
 }
