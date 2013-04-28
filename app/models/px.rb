@@ -11,6 +11,6 @@ class Px < ActiveRecord::Base
   has_attached_file :image, styles: {
     thumb: '100x100>', 
     square: '220x220#', 
-    medium: '300x300>'
+    medium: '400x400>'
   }
 end
