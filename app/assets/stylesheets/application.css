@@ -22,3 +22,29 @@
   font-size: large;
 }
 
+.add {
+  display: block;
+  left: 0;
+  position: fixed;
+  top: 104px;
+  z-index: 99999;
+}
+.add a:link,  .add a:visited {
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), -1px 0 0 rgba(255, 255, 255, 0.1) inset;
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), -1px 0 0 rgba(255, 255, 255, 0.1) inset;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), -1px 0 0 rgba(255, 255, 255, 0.1) inset;
+  background: url('data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAgAElE…dqq5pTZo0sZcsWVJHhzFtkjFe8KNHj3QMQUpKisZ0/D/qViQREnqi8gAAAABJRU5ErkJggg==') repeat #464368;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  color: #b0aec8;
+  display: block;
+  font-weight: bold;
+  height: 40px;
+  line-height: 42px;
+  margin-left: -27px;
+  padding: 0 12px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
