@@ -3,17 +3,20 @@
 // You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 function GmapInitialize() {
-  var lat = parseFloat(document.getElementById("latitude").textContent), lng = parseFloat(document.getElementById("longitude").textContent);
+  var lat = parseFloat(document.getElementById("latitude").textContent);
+  var lng = parseFloat(document.getElementById("longitude").textContent);
   var latlng = new google.maps.LatLng(lat, lng);
+
   var mapOptions = {
     center: latlng,
-    zoom: 13,
+    zoom: 14,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   var map = new google.maps.Map(document.getElementById("gmap_canvas"), mapOptions);
 
-  var marker = new google.maps.Marker({
-    position: latlng,
-    map: map
-  });
+  var panoramaOptions = {
+    position: latlng
+  };
+  var panorama = new  google.maps.StreetViewPanorama(document.getElementById("gmap_street_view"), panoramaOptions);
+  map.setStreetView(panorama);
 }

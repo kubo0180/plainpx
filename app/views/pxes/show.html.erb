@@ -15,7 +15,17 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
 </div>
 
 <div class="row" style="margin-top:1em;">
+  <div class="span5">
+    <div id="gmap_canvas" class="span5" style="height:240px"></div> <!-- you have to specify width or height on css layer to display gmaps! -->
+  </div>
+  <div class="span5">
+    <div id="gmap_street_view" class="span5" style="height:240px"></div> <!-- you have to specify width or height on css layer to display gmaps! -->
+  </div>
+</div>
+
+<div class="row" style="margin-top:1em;">
   <div class="span6">
+    <h2>about</h2>
     <p>
       <b>Title:</b>
       <%= @px.title %>
@@ -37,18 +47,19 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
       None
       <% end %>
     </p>
+  </div>
+  <div class="span5">
     <%= render 'comments/index' %>
 
     <%= render 'comments/form' %>
+  </div>
+</div>
 
+<div class="row">
+  <div class="span11">
     <p>
       <%= link_to 'Edit', edit_px_path(@px) %> |
       <%= link_to 'Back', pxes_path %>
     </p>
-  </div>
-  <div class="span5">
-  <% if @px.latitude and @px.longitude and @px.gmaps %>
-    <div id="gmap_canvas" class="span5" style="height:240px"></div> <!-- you have to specify width or height on css layer to display gmaps! -->
-  <% end %>
   </div>
 </div>
