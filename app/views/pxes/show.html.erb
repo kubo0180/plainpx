@@ -14,19 +14,9 @@ google.maps.event.addDomListener(window, "load", GmapInitialize);
   
   <div class="span3 info">
     <h2><%= @px.title %></h2>
-    <p>(<%= @px.user_name %> uploaded)</p>
+    <p>(uploaded by <%= @px.user_name %>)</p>
     <p>
-      <b>description:</b>
-      <%= @px.description %>
-    </p>
-    <p>
-      <b>Location:</b>
-      <% if @px.latitude and @px.longitude %>
-      <span id="latitude"><%= @px.latitude %></span>, 
-      <span id="longitude"><%= @px.longitude %></span>
-      <% else %>
-      None
-      <% end %>
+      <b><%= @px.description %></b>
     </p>
   </div>
 </div>
